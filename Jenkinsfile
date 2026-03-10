@@ -10,25 +10,25 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch:'main', url: 'https://github.com/Mafuj-dev/DevOPS.git'
+                git branch: 'main', url: 'https://github.com/Mafuj-dev/DevOPS.git'
             }
         }
 
         stage('Compile') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package Application') {
             steps {
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
 
